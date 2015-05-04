@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :todos, only: [:new, :create, :show]
+  devise_for :users
+  resources :todos, only: [:index, :new, :create, :show]
+
+  root 'todos#index'
 
 
   
