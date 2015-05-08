@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root 'todos#index'
 
-  #get 'profile' => 'profiles#update_user'
+  get 'profile' => 'users#show'
 
   #get 'profile' => '/users/update_user.html.erb'
 
