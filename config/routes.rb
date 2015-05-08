@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
   root 'todos#index'
 
+  #get 'profile' => 'profiles#update_user'
+
+  #get 'profile' => '/users/update_user.html.erb'
+
 
   
   # The priority is based upon order of creation: first created -> highest priority.

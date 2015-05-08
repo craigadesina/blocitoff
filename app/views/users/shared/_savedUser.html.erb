@@ -1,0 +1,6 @@
+Welcome <%= current_user.name || current_user.email %>
+ <p> We are very pleased to have you around here! </p>
+
+<%= link_to "Update account details", edit_user_registration_path%>
+
+<%= link_to "Log out", destroy_user_session_path, method: :delete %>

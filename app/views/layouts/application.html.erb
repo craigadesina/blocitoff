@@ -7,6 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% if user_signed_in? %>
+ 
+<%= render "users/shared/savedUser" %>
+<% else %>
+<%= render "users/shared/nilUser" %>
+<% end %>
 <p><%= flash[:notice] if flash[:notice] %></p>
 <%= yield %>
 
