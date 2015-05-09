@@ -4,7 +4,10 @@ Rails.application.routes.draw do
 
   root 'todos#index'
 
-  get 'profile' => 'users#show'
+  resources :users, only: [:show] do
+    resources :items, only: [:create]
+  end
+  #get 'profile' => 'users#show'
 
   #get 'profile' => '/users/update_user.html.erb'
 

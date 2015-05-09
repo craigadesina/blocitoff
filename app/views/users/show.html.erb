@@ -1,8 +1,13 @@
-Name: <%= current_user.name %>
+Name: <%= @user.name %>
 
-Email: <%= current_user.email %>
+Email: <%= @user.email %>
 
-Created at: <%= current_user.updated_at %>
+Member since: <%= @user.updated_at %> <br />
 
+Items: <%= @user.items.count %> <br />
+
+New todo <%= render partial: 'items/form', locals: {user: @user, item: @item} %>
+
+Current tasks: <%= render partial: 'items/item', collection: @items %>
 
 
