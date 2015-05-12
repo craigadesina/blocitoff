@@ -1,13 +1,21 @@
-Name: <%= @user.name %>
+<% if @user == current_user %>
 
-Email: <%= @user.email %>
+  Name: <%= @user.name %>
 
-Member since: <%= @user.updated_at %> <br />
+  Email: <%= @user.email %>
 
-Items: <%= @user.items.count %> <br />
+  Member since: <%= @user.updated_at %> <br />
 
-New todo <%= render partial: 'items/form', locals: {user: @user, item: @item} %>
+  Items: <%= @user.items.count %> <br />
 
-Current tasks: <%= render partial: 'items/item', collection: @items %>
+  New todo <%= render partial: 'items/form', locals: {user: @user, item: @item} %>
+
+  Current tasks: <%= render partial: 'items/item', collection: @items %>
+
+<% else %>
+
+  You can not view <%= User.find(params[:id]).name %>'s profile.
+
+<% end %>
 
 
