@@ -7,13 +7,17 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do
     resources :items, only: [:create]
   end
+
+resources :items, only: [:destroy, :index]
+  
+  
+
+  # delete 'item' => 'items#destroy'
   #get 'profile' => 'users#show'
 
-  #get 'profile' => '/users/update_user.html.erb'
+  # get 'profile' => '/users/update_user.html.erb'
 
-
-  
-  # The priority is based upon order of creation: first created -> highest priority.
+ # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
