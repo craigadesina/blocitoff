@@ -8,6 +8,8 @@ gem 'devise'
 
 gem 'faker'
 
+gem 'whenever', :require => false
+
 gem 'factory_girl_rails', '~> 4.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
