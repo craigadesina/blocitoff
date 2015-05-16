@@ -8,6 +8,12 @@
 
   Items: <%= @user.items.count %> <br />
 
+  Today's date: <input type='date' value='<%=Time.now.to_date %>'>
+
+  Video: <video width='600' height='300' id='video' controls='controls' autoplay='true'>
+  <source src ="https://youtu.be/ZcYdTs389Ok" />
+  </video>
+
   New todo <%= render partial: 'items/form', locals: {user: @user, item: @item} %>
 
   Current tasks:
@@ -18,20 +24,17 @@
 
   <%= render partial: 'items/item', locals: {item: item} %>
 
-    
-    
-      <%= link_to "delete me", item, method: :delete, id: item.id, class: 'glyphicon glyphicon-ok', remote: true %>
+    <%= link_to "delete me", item, method: :delete, id: item.id, class: 'glyphicon glyphicon-ok', remote: true %>
       
     <% end %>
 
   <% end %>
-
-
 
 <% else %>
 
     You can not view <%= User.find(params[:id]).name %>'s profile.
 
 <% end %>
+
 
 

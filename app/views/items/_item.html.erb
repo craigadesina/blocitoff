@@ -1,4 +1,5 @@
 <%= div_for item do |f| %>
   Task description: <%= f.name %> <br>
-  Created at: <%= f.created_at %>
+  Created at: <%= f.created_at.to_date %> <br>
+  <%= f.days_left %> days remaining before deletion 
 <% end %>
