@@ -35,6 +35,7 @@ item = Item.create(
   #password_confirmation: :password) 
 
 # Create an default user
+ if !User.find_by(email: 'admin@example.com')
  admin = User.new(
    name:     'Admin User',
    email:    'admin@example.com',
@@ -42,6 +43,7 @@ item = Item.create(
    )
  admin.skip_confirmation!
  admin.save!
+end
 
  
 
